@@ -4,12 +4,12 @@
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
   --color-dark-white: #bdbdbd;
-  --color-blue: #8ebbf5;
-  --color-dark-blue: #5abbf5;
+  --color-blue: #49b5db;
+  --color-dark-blue: #79a6e3;
   --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
   --color-light-grey: #7c7979;
-  --color-purple: #b989d8;
+  --color-purple: #a885f2;
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
@@ -28,6 +28,9 @@
 
   /* 사이즈 */
   --size-border-radius: 4px;
+
+  /* 애니메이션  */
+  --anmimation-duration: 300ms;
 }
 
 /* 공통 태그들 */
@@ -154,4 +157,74 @@ p {
   padding: 8px 12px;
   border: 2px solid var(--color-white);
   border-radius: var(--size-border-radius);
+}
+
+/* 공통 세션 */
+.section {
+  padding: 50px;
+  text-align: center;
+  max-width: 1200px; /* 보통 1000~1200이 데스크탑에서 편히 볼 수 있는 사이즈 */
+  margin: auto;
+}
+
+/* About */
+.about__majors {
+  display: flex;
+  justify-content: space-between;
+  margin: 80px 0;
+}
+
+.major__icon {
+  width: 170px;
+  height: 170px;
+  line-height: 170px;
+  font-size: 70px;
+  margin: auto;
+  color: var(--color-purple);
+  border: 1px solid var(--color-purple);
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.major__icon i {
+  /* 애니메이션 */
+  transition: all var(--anmimation-duration); /* 보통 추천 속도 250 ~ 350 */
+}
+
+.major__icon:hover i {
+  /* 마우스 위에 올렸을 때 액션 */
+  color: var(--color-dark-blue);
+  transform: rotate(-30deg) scale(1.1);
+}
+
+.major__title,
+.major__description {
+  color: var(--color-dark-grey);
+}
+
+.major__description {
+  font-size: var(--font-small);
+}
+
+.job {
+  display: flex;
+  align-items: center;
+}
+
+.job__description {
+  margin: 0 16px;
+  text-align: left;
+}
+
+.job__name,
+.job__period {
+  color: var(--color-light-grey);
+}
+
+.job__name {
+  font-size: var(--font-small);
+}
+
+.job__period {
+  font-size: var(--font-micro);
 }
