@@ -7,7 +7,7 @@
     <title>Sungwoo's Portfolio</title>
     <meta name="description" content="portfolio engineer Sungwoo">
     <meta name="author" content="Sungwoo">
-    <link rel="icon" type="image/png" href="imgs/bee_logo.png" />
+    <link rel="icon" type="image/png" href="imgs/blogo.png" />
     <script src="https://kit.fontawesome.com/06ed6e9a49.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Pen+Script&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
@@ -18,18 +18,25 @@
     <!-- Navbar -->
     <nav id="navbar">
         <div class="navbar__logo">
-            <img class="fit-picture" src="imgs/bee_logo.png"
+            <img class="fit-picture" src="imgs/logo.png"
             height="30px;">
             <a href="#">Sungwoo</a>
         </div>
-        <ul class="navbar__menu">
-            <li class="navbar__menu__item active">Home</li>
-            <li class="navbar__menu__item">About</li>
-            <li class="navbar__menu__item">Skills</li>
-            <li class="navbar__menu__item">My work</li>
-            <li class="navbar__menu__item">Testimonial</li>
-            <li class="navbar__menu__item">Contact</li>
-        </ul>
+        <div class="navbar__menu">
+            <ul class="navbar__menu">
+                <li class="navbar__menu__item active">Home</li>
+                <li class="navbar__menu__item">About</li>
+                <li class="navbar__menu__item">Skills</li>
+                <li class="navbar__menu__item">My work</li>
+                <li class="navbar__menu__item">Testimonial</li>
+                <li class="navbar__menu__item">Contact</li>
+            </ul>
+        </div>
+
+        <!-- 반응형을 위한 토글 버튼 -->
+        <button class="navbar__toggle-btn">
+            <i class="fas fa-bars"></i>
+        </button>
     </nav>
 
     <!-- Home -->
