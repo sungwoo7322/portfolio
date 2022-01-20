@@ -1,0 +1,34 @@
+/* 글로벌 */
+:root {
+  /* 색깔 */
+  --color-white: #ffffff;
+  --color-light-white: #eeeeee;
+  --color-dark-white: #bdbdbd;
+  --color-blue: #8ebbf5;
+  --color-dark-blue: #5abbf5;
+  --color-dark-grey: #4d4d4d;
+  --color-grey: #616161;
+  --color-light-grey: #7c7979;
+  --color-purple: #b989d8;
+  --color-yellow: #fff7d1;
+  --color-orange: #feb546;
+  --color-black: #000000;
+
+  /* 폰트 사이즈 */
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-small: 16px;
+  --font-micro: 14px;
+
+  /* 폰트 두께 */
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weight-regular: 400;
+}
+
+/* 공통 태그들 */
+* {
+  /* 패딩을 줬을 때 높이와 넓이가 그 패딩을 포함 했을 때도 동일한 높이와 넓이가 되도록  */
+  box-sizing: border-box;
+}
