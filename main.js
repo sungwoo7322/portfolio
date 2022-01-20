@@ -22,6 +22,25 @@ document.addEventListener('scroll', () => {
     }
 });
 
+// 메뉴 클릭시 해당 위치로 스크롤링
+
+// navbar__menu를 가져와 navbarMenu에 넣어준다.
+const navbarMenu = document.querySelector('.navbar__menu');
+// navbarMenu가 클릭이 되면 등록된 함수 호출
+navbarMenu.addEventListener('click', (event) => {
+    const target = event.target;
+    const link = target.dataset.link;
+    // navbarmenu 자체를 클릭했을 때가 있기에 link가 데이터가 있을 때만 불러온다.
+    if(link == null) {
+        return;
+    }
+    // 클릭했을 때 html의 data-link="#about"이런 것들이 호출 된다.
+    console.log(event.target.dataset.link);
+    // 호출된 link를 가져와 scrollTo에 넣어준다.
+    const scrollTo = document.querySelector(link);
+    // 가져온 링크에 스크롤인투뷰 함수와 그 함수에 포함된 스무스를 사용하여 깔끔하게 해당 위치로 이동한다.
+    scrollTo.scrollIntoView({ behavior: 'smooth'});
+});
 
 
 
