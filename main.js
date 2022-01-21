@@ -86,6 +86,14 @@ workBtnContainer.addEventListener('click', (e) => {
     if(filter == null) { // 안전장치
         return;
     }
+
+    // 이전 선택 아이템에서 selection 없애고 새로 선택된 버튼에게 select 넣어주기
+    const active = document.querySelector('.category__btn.selected');
+    active.classList.remove('selected');
+    // 이 타겟에는 항상 버튼만 할당 되어 지는 식
+    const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+    target.classList.add('selected');
+
     // 클릭이 되면 컨테이너 자체에 anim-out 클래스 추가
     projectContainer.classList.add('anim-out');
     // 0.3초가 지나면 anim-out을 없애준다.
