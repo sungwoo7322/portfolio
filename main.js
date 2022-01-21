@@ -74,7 +74,35 @@ arrowUp.addEventListener('click', () => {
     scrollIntoView('#home');
 });
 
-
+// 프로젝트 카테고리 별로 보여주기
+const workBtnContainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+// 프로젝트스에 프로젝트들 전부를 받아온다.
+const projects = document.querySelectorAll('.project');
+workBtnContainer.addEventListener('click', (e) => {
+    // 클릭 됐을 때 e를 받아와서 안에 타겟 안에 데이터 셋 안에 있는 필터 값을 받아 온다.
+    // 그리고 버튼 안 숫자를 클릭했을 때 필터값이 없으면(||) parentNode(디버깅에서 찾은)의 데이터셋 필터값을 받아 온다.
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter; 
+    if(filter == null) { // 안전장치
+        return;
+    }
+    // 클릭이 되면 컨테이너 자체에 anim-out 클래스 추가
+    projectContainer.classList.add('anim-out');
+    // 0.3초가 지나면 anim-out을 없애준다.
+    setTimeout(() => { // 시간 순서상 setTimeout안에 데이터 처리 과정이 들어가야 애니메이션이 어색하지 않다.
+        // 간단하게 .project 를 전부 불러온다.
+        projects.forEach((project) => {
+            // 필터가 전부 다 보여줘야 하는 '*'이거나 필터가 프로젝트의 타입이 똑같으면
+            if(filter === '*' || filter === project.dataset.type) {
+                // 프로젝트의 클래스에 invisible(안보여주는 클래스)을 제거해 준다.
+                project.classList.remove('invisible');
+            } else {
+                project.classList.add('invisible');
+            }
+        });
+        projectContainer.classList.remove('anim-out');
+    }, 300);
+});
 
 // 나중에 또 쓰일 수 있기 때문에 함수로 하나 만들어놓고 호출만 할 수 있게.
 function scrollIntoView(selector) {

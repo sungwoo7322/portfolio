@@ -201,20 +201,16 @@
     <!-- Work -->
     <section id="work" class="section">
         <div class="section__container">
-            <h1>Mywork</h1>
+        <h1>My work</h1>
         <h3>Projects</h3>
         <div class="work__categories">
-            <button class="category__btn active">All<span class="category__count">8</span></button>
-            <button class="category__btn">Front-end<span class="category__count">3</span></button>
-            <button class="category__btn">Back-end<span class="category__count">3</span></button>
-            <button class="category__btn">Mobile<span class="category__count">2</span></button>
+            <button class="category__btn active" data-filter="*">All<span class="category__count">6</span></button>
+            <button class="category__btn" data-filter="education">교육원<span class="category__count">4</span></button>
+            <button class="category__btn" data-filter="clone">클론 코딩<span class="category__count">1</span></button>
+            <button class="category__btn" data-filter="media">미디어 쿼리 연습<span class="category__count">1</span></button>
         </div>
         <div class="work__projects">
-            <a 
-                href="" 
-                class="project"
-                target="blank"
-            >
+            <a href="https://github.com/sungwoo7322/planB.git" class="project" target="blank" data-type="education">
                 <img 
                     class="project__img"
                     src="imgs/project/planB_home_web_app.png" 
@@ -225,11 +221,40 @@
                     <span>교육원 프로젝트</span>
                 </div>
             </a>
-            <a 
-                href="" 
-                class="project"
-                target="blank"
-            >
+            <a href="https://github.com/sungwoo7322/planB.git" class="project" target="blank" data-type="education">
+                <img 
+                    class="project__img"
+                    src="imgs/project/planB_singup.png" 
+                    alt="PlanB"
+                />
+                <div class="project__description">
+                    <h3>PlanB Site</h3>
+                    <span>교육원 프로젝트</span>
+                </div>
+            </a>
+            <a href="https://github.com/sungwoo7322/planB.git" class="project" target="blank" data-type="education">
+                <img 
+                    class="project__img"
+                    src="imgs/project/planB_create.png" 
+                    alt="PlanB"
+                />
+                <div class="project__description">
+                    <h3>PlanB Site</h3>
+                    <span>교육원 프로젝트</span>
+                </div>
+            </a>
+            <a href="https://github.com/sungwoo7322/planB.git" class="project" target="blank" data-type="education">
+                <img 
+                    class="project__img"
+                    src="imgs/project/planB_product.png" 
+                    alt="PlanB"
+                />
+                <div class="project__description">
+                    <h3>PlanB Site</h3>
+                    <span>교육원 프로젝트</span>
+                </div>
+            </a>
+            <a href="" class="project" target="blank" data-type="clone">
                 <img 
                     class="project__img"
                     src="imgs/project/cloneCoding.png" 
@@ -240,11 +265,7 @@
                     <span>유튜브 클론 코딩 프로젝트</span>
                 </div>
             </a>
-            <a 
-                href="" 
-                class="project"
-                target="blank"
-            >
+            <a href="" class="project" target="blank" data-type="media">
                 <img 
                     class="project__img"
                     src="imgs/project/project2.png" 
@@ -252,7 +273,7 @@
                 />
                 <div class="project__description">
                     <h3>responsive-nav-bar</h3>
-                    <span>media query 연습</span>
+                    <span>media query</span>
                 </div>
             </a>
         </div>

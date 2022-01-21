@@ -361,6 +361,14 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  opacity: 1;
+  transition: all var(--anmimation-duration) ease-out;
+}
+
+/* js 90번, 102번 째 줄 */
+.work__projects.anim-out {
+  opacity: 0.6;
+  transform: scale(0.96) translateY(40px);
 }
 
 .project {
@@ -372,6 +380,11 @@ p {
   height: 250px;
   margin: 2px;
   background-color: var(--color-light-white);
+}
+
+/* js 94번 째 줄 */
+.project.invisible {
+  display: none;
 }
 
 .project__img {
