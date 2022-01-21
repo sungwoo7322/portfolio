@@ -23,7 +23,6 @@ document.addEventListener('scroll', () => {
 });
 
 // 메뉴 클릭시 해당 위치로 스크롤링
-
 // navbar__menu를 가져와 navbarMenu에 넣어준다.
 const navbarMenu = document.querySelector('.navbar__menu');
 // navbarMenu가 클릭이 되면 등록된 함수 호출
@@ -34,7 +33,7 @@ navbarMenu.addEventListener('click', (event) => {
     if(link == null) {
         return;
     }
-
+    navbarMenu.classList.remove('open');
     // 함수로 만들었기 때문에 간단하게 작성할 수 있다.
     scrollIntoView(link);
 
@@ -45,7 +44,14 @@ navbarMenu.addEventListener('click', (event) => {
     // // 가져온 링크에 스크롤인투뷰 함수와 그 함수에 포함된 스무스를 사용하여 깔끔하게 해당 위치로 이동한다.
     // scrollTo.scrollIntoView({ behavior: 'smooth'});
 });
-// 위와 비슷한 방식 > 버튼 하나만 있기에 querySelector에서 바로 해당 아이디 네임 적어주면 된다.
+
+// 버튼을 클릭하면 메뉴 아이템이 나오도록
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+    navbarMenu.classList.toggle('open');
+});
+
+// 위쪽 navbar__menu와 비슷한 방식 > 버튼 하나만 있기에 querySelector에서 바로 해당 아이디 네임 적어주면 된다.
 const homeContact = document.querySelector('.home__contact');
 homeContact.addEventListener('click', () => {
     scrollIntoView('#contact');
