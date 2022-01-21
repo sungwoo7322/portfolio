@@ -34,14 +34,26 @@ navbarMenu.addEventListener('click', (event) => {
     if(link == null) {
         return;
     }
+
+    // 함수로 만들었기 때문에 간단하게 작성할 수 있다.
+    scrollIntoView(link);
+
     // 클릭했을 때 html의 data-link="#about"이런 것들이 호출 된다.
-    console.log(event.target.dataset.link);
-    // 호출된 link를 가져와 scrollTo에 넣어준다.
-    const scrollTo = document.querySelector(link);
-    // 가져온 링크에 스크롤인투뷰 함수와 그 함수에 포함된 스무스를 사용하여 깔끔하게 해당 위치로 이동한다.
-    scrollTo.scrollIntoView({ behavior: 'smooth'});
+    // console.log(event.target.dataset.link);
+    // // 호출된 link를 가져와 scrollTo에 넣어준다.
+    // const scrollTo = document.querySelector(link);
+    // // 가져온 링크에 스크롤인투뷰 함수와 그 함수에 포함된 스무스를 사용하여 깔끔하게 해당 위치로 이동한다.
+    // scrollTo.scrollIntoView({ behavior: 'smooth'});
+});
+// 위와 비슷한 방식 > 버튼 하나만 있기에 querySelector에서 바로 해당 아이디 네임 적어주면 된다.
+const homeContact = document.querySelector('.home__contact');
+homeContact.addEventListener('click', () => {
+    scrollIntoView('#contact');
 });
 
-
-
+// 나중에 또 쓰일 수 있기 때문에 함수로 하나 만들어놓고 호출만 할 수 있게.
+function scrollIntoView(selector) {
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({ behavior: 'smooth'});
+}
 
