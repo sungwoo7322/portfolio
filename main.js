@@ -59,6 +59,22 @@ document.addEventListener('scroll', () => {
 
 });
 
+// 스크롤링 되면 화살표 버튼이 나타 난다.
+const arrowUp = document.querySelector('.arrow-up');
+document.addEventListener('scroll', () => {
+    if(window.scrollY > homeHight /2) {
+        arrowUp.classList.add('visible'); // css에 있는 visible
+    } else {
+        arrowUp.classList.remove('visible');
+    }
+});
+
+// 화살표 버튼 클릭 시 home으로 올라가게 한다.
+arrowUp.addEventListener('click', () => {
+    scrollIntoView('#home');
+});
+
+
 
 // 나중에 또 쓰일 수 있기 때문에 함수로 하나 만들어놓고 호출만 할 수 있게.
 function scrollIntoView(selector) {
