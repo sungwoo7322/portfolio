@@ -51,6 +51,15 @@ homeContact.addEventListener('click', () => {
     scrollIntoView('#contact');
 });
 
+// 크롤링 될수록 홈이 투명해 진다.
+const home = document.querySelector('.home__container');
+const homeHight = home.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+    home.style.opacity = 1 - window.scrollY / homeHight; // homeHight이 800이고 스크롤이 800이면 = 1 그럼 1- 1 은 0(불투명)
+
+});
+
+
 // 나중에 또 쓰일 수 있기 때문에 함수로 하나 만들어놓고 호출만 할 수 있게.
 function scrollIntoView(selector) {
     const scrollTo = document.querySelector(selector);
