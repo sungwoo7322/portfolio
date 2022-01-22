@@ -63,6 +63,7 @@ button {
   cursor: pointer;
   border: none;
   outline: none;
+  padding: 0;
 }
 
 /* 타이포그래피 */
@@ -109,7 +110,7 @@ p {
 
 /* navbar 스크롤 css */
 #navbar.navbar--dark {
-  background-color: var(--color-dark-blue);
+  background-color: var(--color-blue);
   padding: 8px;
 }
 
@@ -134,8 +135,11 @@ p {
   margin: 0 4px;
   color: var(--color-white);
   cursor: pointer;
-  border: 1px solid transparent;
   border-radius: var(--size-border-radius);
+}
+
+.navbar__menu__item.active {
+  border: 1px solid var(--color-white);
 }
 
 .navbar__menu__item:hover {
@@ -180,6 +184,10 @@ p {
   padding: 8px 12px;
   border: 2px solid var(--color-white);
   border-radius: var(--size-border-radius);
+}
+
+.home__contact:hover {
+  background-color: var(--color-orange);
 }
 
 /* 공통 세션 */
@@ -322,6 +330,7 @@ p {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
 }
 
 .category__btn.selected,
@@ -335,7 +344,7 @@ p {
 .category__btn.selected .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
-  top: 0;
+  top: 6.5px;
 }
 
 .category__count {
@@ -346,11 +355,11 @@ p {
   height: 24px;
   line-height: 24px; /* span 태그의 숫자 동그라미를 잘 맞춰 준다. */
   display: inline-block; /* span 태그의 숫자 동그라미를 잘 맞춰 준다. */
-  position: relative;
+  position: absolute;
 
   /* 평소에 안보이다가 액티브나 마우스가 위로 올라올 때 숫자가 밑으로 내려오게 한다. */
   top: -20px;
-  left: 4px;
+  right: 16px;
   opacity: 0;
   transition: all var(--anmimation-duration);
 }
@@ -519,13 +528,31 @@ p {
 
 /* 화면이 768px 보다 작아질 때 */
 @media screen and (max-width: 768px) {
+  :root {
+    /* 폰트 사이즈 */
+    --font-large: 30px;
+    --font-medium: 18px;
+    --font-regular: 16px;
+    --font-small: 14px;
+    --font-micro: 12px;
+  }
+
+  .navbar__logo {
+    position: relative;
+    top: -6px;
+  }
+
   .navbar__toggle-btn {
     display: block;
+    /* top: 16px; */
+    right: 16px;
+    font-size: var(--font-medium);
   }
+
   #navbar {
     flex-direction: column;
     align-items: flex-start;
-    background-color: var(--color-dark-blue);
+    background-color: var(--color-blue);
   }
 
   #navbar.navbar--dark {
@@ -543,16 +570,34 @@ p {
     display: block;
   }
 
+  .section {
+    padding: 16px;
+    padding-top: 40px;
+  }
+
   .about__majors {
     flex-direction: column;
+    margin-top: 30px;
+    margin-bottom: 0px;
   }
 
   .major {
-    margin-bottom: 38px;
+    margin-bottom: 30px;
   }
 
   .skillset {
     flex-direction: column;
+  }
+
+  .category__btn {
+    margin: 4px 0;
+    width: 100%;
+  }
+
+  .category__btn.selected .category__count,
+  .category__btn:hover .category__count {
+    opacity: 1;
+    top: 5px;
   }
 
   .project {
@@ -560,8 +605,32 @@ p {
     flex-grow: 1;
   }
 
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .testimonial__avatar {
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .testimonial__avatar:nth-child(even),
+  .testimonial__avatar:nth-child(odd) {
+    margin: 0;
+    margin-bottom: 8px;
+  }
+
+  .testimonial__speech-bubble {
+    order: 1;
+  }
+
+  .arrow-up {
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+    right: 16px;
+    bottom: 16px;
   }
 }

@@ -43,6 +43,8 @@ navbarMenu.addEventListener('click', (event) => {
     // const scrollTo = document.querySelector(link);
     // // 가져온 링크에 스크롤인투뷰 함수와 그 함수에 포함된 스무스를 사용하여 깔끔하게 해당 위치로 이동한다.
     // scrollTo.scrollIntoView({ behavior: 'smooth'});
+
+
 });
 
 // 버튼을 클릭하면 메뉴 아이템이 나오도록
@@ -118,9 +120,73 @@ workBtnContainer.addEventListener('click', (e) => {
     }, 300);
 });
 
+// 모든 섹션 요소들과 메뉴 아이템들을 가지고 온다.
+// IntersectionObserver를 이용해서 모든 섹션들을 관찰한다.
+// 보여지는 섹션에 해당하는 메뉴 아이템을 활성화 시킨다.
+
+const sectionIds = [
+    '#home', 
+    '#about', 
+    '#skills',
+    '#work', 
+    // '#testimonials',
+    '#contact',
+];
+
+// 해당하는 모든 섹션 요소와 각각 메뉴 아이템 가져옴
+const sections = sectionIds.map(id => document.querySelector(id));
+const navItems = sectionIds.map(id => document.querySelector(`[data-link="${id}"]`));
+console.log(sections);
+console.log(navItems);
+
+// 선택된 메뉴 인덱스와 변수를 저장
+let selectedNavIndex = 0;
+let selectedNavItem = navItems[0];
+// 새로운 메뉴 아이템을 선택할 때 마다
+function selectNavItem(selected) {
+    selectedNavItem.classList.remove('active'); // 이전 선택 지워주고
+    selectedNavItem = selected; // 다시 새롭게 할당하고 나서
+    selectedNavItem.classList.add('active'); // 액티브를 지정해 준다.
+};
+
 // 나중에 또 쓰일 수 있기 때문에 함수로 하나 만들어놓고 호출만 할 수 있게.
 function scrollIntoView(selector) {
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({ behavior: 'smooth'});
+    selectNavItem(navItems[sectionIds.indexOf(selector)]);
 }
 
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.3,
+};
+
+// 인터섹션 옵저버를 이용해서 섹션이 밖으로 나갈 때마다 그 다음에 해당하는 인덱스 계산 식
+const observerCallback = (entries, observer) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting && entry.intersectionRatio > 0) { // 화면에서 빠져나갈 때 && 맨 앞 맨 뒤 선택되어지게
+            const index = sectionIds.indexOf(`#${entry.target.id}`); // 요소마다 인덱스 번호 부여
+            // 스크롤링이 아래로 되어서 페이지가 올라옴
+            if (entry.boundingClientRect.y < 0) {
+                selectedNavIndex = index + 1;
+            } else {
+                selectedNavIndex = index - 1;
+            }
+        }
+    });
+};
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+sections.forEach(section => observer.observe(section));
+
+// 스크롤링 했을 때
+window.addEventListener('wheel', () => { // 사용자가 직접 스크롤 할 때는 wheel 이벤트가 발생하기 때문에 정말 손으로 스크롤링 할 때만
+    if (window.scrollY === 0) { // 스크롤이 아직 안됐을 때 인덱스 번호 처음으로 지정
+        selectedNavIndex = 0;
+    } else if (window.scrollY + window.innerHeight === document.body.clientHeight) { // 마지막에 도달 했다면
+        selectedNavIndex = navItems.length - 1; // 마지막 인덱스를 지정해 준다.
+    }
+    // 배열로 선언해 준 navItems의 부여된 인덱스 번호를 불러와 줌 > 해당 인덱스 번호가 됐을 때 메뉴바 강조 테두리 바뀜
+    selectNavItem(navItems[selectedNavIndex]);
+});
