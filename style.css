@@ -4,7 +4,7 @@
   --color-white: #ffffff;
   --color-light-white: #eeeeee;
   --color-dark-white: #bdbdbd;
-  --color-blue: #49b5db;
+  --color-blue: #9bb2d7;
   --color-dark-blue: #79a6e3;
   --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
@@ -210,15 +210,21 @@ p {
 }
 
 .major__icon {
-  width: 170px;
-  height: 170px;
-  line-height: 170px;
+  width: 130px;
+  height: 130px;
+  line-height: 130px;
   font-size: 70px;
   margin: auto;
-  color: var(--color-purple);
-  border: 1px solid var(--color-purple);
-  border-radius: 50%;
+  /* color: var(--color-purple); */
+  border: 1px solid var(--color-blue);
+  border-radius: 30%;
   margin-bottom: 16px;
+  box-shadow: 0px 13px 18px rgb(0 0 0 / 15%), 0px 11px 55px rgb(0 0 0 / 7%);
+}
+
+.major:nth-child(even) .major__icon {
+  background-color: var(--color-blue);
+  color: rgb(70, 68, 68);
 }
 
 .major__icon i {
@@ -239,6 +245,7 @@ p {
 
 .major__description {
   font-size: var(--font-small);
+  padding-bottom: 20px;
 }
 
 .job {
@@ -266,7 +273,7 @@ p {
 
 /* Skill */
 #skills {
-  background-color: var(--color-yellow);
+  background-color: var(--color-light-white);
 }
 
 .skillset {
