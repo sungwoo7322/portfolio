@@ -7,7 +7,7 @@
   --color-beige: #f7dec1;
   --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
-  --color-light-grey: #7c7979;
+  --color-light-grey: #dfdfdf;
   --color-purple: #a885f2;
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
@@ -26,7 +26,10 @@
   --weight-regular: 400;
 
   /* 사이즈 */
+  --base-space: 8px;
   --size-border-radius: 4px;
+  --size-button: 60px;
+  --size-border: 4px;
 
   /* 애니메이션  */
   --anmimation-duration: 300ms;
@@ -53,16 +56,8 @@ a {
   top: 5px;
 }
 
-button {
-  background-color: transparent;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  padding: 0;
-}
-
 #navbar {
-  position: fixed;
+  /* position: fixed; */
   height: 56px;
   width: 100%;
   display: flex;
@@ -84,6 +79,93 @@ button {
 .navbar__logo {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
+}
+
+.container {
+  height: 100%; /* 뷰포트의 100% */
+  display: flex; /* 한 줄 정렬 */
+  flex-direction: column; /* 한 줄에 하나씩 정렬 */
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center; /* 반대축 가운데 정렬 */
+}
+
+.logo {
+  cursor: pointer;
+  transition: transform var(--anmimation-duration) ease;
+}
+
+.btn {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: transform var(--anmimation-duration) ease;
+  margin-right: var(--base-space);
+}
+
+.btn:hover,
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.btnContainer {
+  display: flex;
+  align-items: center;
+}
+
+.imgBtn {
+  width: var(--size-button);
+  height: var(--size-button);
+}
+
+.colorBtn {
+  font-size: var(--font-regular);
+  padding: calc(var(--base-space) * 2);
+  border-radius: var(--size-border);
+}
+
+.black {
+  color: var(--color-white);
+  background-color: var(--color-black);
+}
+
+.grey {
+  background-color: var(--color-grey);
+}
+
+.beige {
+  background-color: var(--color-brown);
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  opacity: 1;
+  transition: all var(--anmimation-duration) ease-out;
+}
+
+.item {
+  position: relative;
+  display: inline-table;
+  justify-content: center;
+  align-items: center;
+  width: 280px;
+  height: 250px;
+  margin: 2px;
+  /* background-color: var(--color-orange); */
+}
+
+.productImg {
+  /* 너가 담겨 있는 박스 안에서만 최대치로 커져야 한다. */
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.item_description {
+  font-size: var(--font-small);
+  font-weight: var(--weight-semi-bold);
+  color: var(--color-dark-grey);
 }
 
 /* 화면이 768px 보다 작아질 때 */
