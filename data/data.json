@@ -5,112 +5,112 @@
             "gender": "male",
             "size": "L",
             "color": "beige",
-            "image": "../imgs/shop/beige_shirt2.jpg"
+            "image": "./imgs/shop/beige_shirt2.jpg"
         },
         {
             "type": "shirt", 
             "gender": "female",
             "size": "M",
             "color": "beige",
-            "image": "../imgs/shop/beige_shirt.jpg"
+            "image": "./imgs/shop/beige_shirt.jpg"
         },
         {
             "type": "pants", 
             "gender": "male",
             "size": "L",
             "color": "beige",
-            "image": "../imgs/shop/beige_pants.jpg"
+            "image": "./imgs/shop/beige_pants.jpg"
         },
         {
             "type": "pants", 
             "gender": "female",
             "size": "S",
             "color": "beige",
-            "image": "../imgs/shop/beige_pants2.jpg"
+            "image": "./imgs/shop/beige_pants2.jpg"
         },
         {
             "type": "skirt", 
             "gender": "female",
             "size": "S",
             "color": "beige",
-            "image": "../imgs/shop/beige_skirt.jpg"
+            "image": "./imgs/shop/beige_skirt.jpg"
         },
         {
             "type": "skirt", 
             "gender": "female",
             "size": "M",
             "color": "beige",
-            "image": "../imgs/shop/beige_skirt2.jpg"
+            "image": "./imgs/shop/beige_skirt2.jpg"
         },
         {
             "type": "shirt", 
             "gender": "male",
             "size": "L",
             "color": "black",
-            "image": "../imgs/shop/black_shirt2.jpg"
+            "image": "./imgs/shop/black_shirt2.jpg"
         },
         {
             "type": "shirt", 
             "gender": "male",
             "size": "S",
             "color": "black",
-            "image": "../imgs/shop/black_shirt.jpg"
+            "image": "./imgs/shop/black_shirt.jpg"
         },
         {
             "type": "pants", 
             "gender": "female",
             "size": "S",
             "color": "black",
-            "image": "../imgs/shop/black_pants.jpg"
+            "image": "./imgs/shop/black_pants.jpg"
         },
         {
             "type": "pants", 
             "gender": "male",
             "size": "M",
             "color": "black",
-            "image": "../imgs/shop/black_pants2.jpg"
+            "image": "./imgs/shop/black_pants2.jpg"
         },
         {
             "type": "skirt", 
             "gender": "female",
             "size": "S",
             "color": "black",
-            "image": "../imgs/shop/black_skirt.jpg"
+            "image": "./imgs/shop/black_skirt.jpg"
         },
         {
             "type": "skirt", 
             "gender": "female",
             "size": "L",
             "color": "black",
-            "image": "../imgs/shop/black_skirt2.jpg"
+            "image": "./imgs/shop/black_skirt2.jpg"
         },
         {
             "type": "shirt", 
             "gender": "female",
             "size": "S",
             "color": "grey",
-            "image": "../imgs/shop/grey_shirt.jpg"
+            "image": "./imgs/shop/grey_shirt.jpg"
         },
         {
             "type": "shirt", 
             "gender": "mail",
             "size": "M",
             "color": "grey",
-            "image": "../imgs/shop/grey_shirt2.jpg"
+            "image": "./imgs/shop/grey_shirt2.jpg"
         },
         {
             "type": "pants", 
             "gender": "male",
             "size": "M",
             "color": "grey",
-            "image": "../imgs/shop/grey_pants.jpg"
+            "image": "./imgs/shop/grey_pants.jpg"
         },
         {
             "type": "skirt", 
             "gender": "female",
             "size": "S",
             "color": "grey",
-            "image": "../imgs/shop/grey_skirt.jpg"
+            "image": "./imgs/shop/grey_skirt.jpg"
         }
     ]
 }
