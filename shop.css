@@ -108,7 +108,7 @@ a {
   transform: scale(1.1);
 }
 
-.btnContainer {
+.btn__container {
   display: flex;
   align-items: center;
 }
