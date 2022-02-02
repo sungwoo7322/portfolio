@@ -1,7 +1,6 @@
 # portfolio
  sungwoo's portfolio
 
-shop
 HTML, Vanilla JS, Css 연습
 
 옷 type, color filter
