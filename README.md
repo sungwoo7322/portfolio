@@ -2,7 +2,7 @@
  sungwoo's portfolio
 
 shop
-HML, Vanilla JS, Css 연습
+HTML, Vanilla JS, Css 연습
 
 옷 type, color filter
 
