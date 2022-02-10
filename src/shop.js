@@ -1,4 +1,22 @@
 'use strict';
+
+// HTML의 navbar 아이디 태그를 가져온다.
+const navbar = document.querySelector('#navbar');
+// navbar 태그의 getBoundingClientRect().height를 써서 높이를 가져온다.
+const navbarHeight = navbar.getBoundingClientRect().height;
+
+// 스크롤 될 때마다 작성한 코드가 실행 된다.
+document.addEventListener('scroll', () => {
+    // 스크롤 된 픽셀 수가 내 navbar의 높이보다 커질 때 !
+    if(window.scrollY > navbarHeight) {
+        // navbar에 navbar--dark 클래스를 만들어 준다.
+        navbar.classList.add('navbar--dark');
+    } else {
+        // navbar에 navbar--dark 클래스를 제거해 준다.
+        navbar.classList.remove('navbar--dark');
+    }
+});
+
 // data.json에 있는 데이터를 받아온다.
 function loadItems() {
     return fetch('data/data.json')
@@ -34,7 +52,7 @@ function onButtonClick(event, items) {
         return;
     }
 
-    // 
+    // 아이템 배열의 키에 해당하는 값이 내가 원하는 벨류와 똑같은 것들만 필터해서 displayItems로 전달한다.
     displayItems(items.filter(item => item[key] === value));
 
 }
